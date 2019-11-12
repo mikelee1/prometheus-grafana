@@ -28,9 +28,9 @@ func main() {
 		http.HandleFunc(e, func(w http.ResponseWriter, r *http.Request) {
 			exporter.IncreCounter()
 			exporter.IncreCounterWithEndpoint(r.URL.Path)
+			exporter.ChangeCpuTemp()
 		})
 	}
-
 	// Handle Metrics endpoint
 	http.Handle(metricsSuffix, promhttp.Handler())
 
