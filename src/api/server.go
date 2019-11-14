@@ -29,6 +29,7 @@ func main() {
 			exporter.IncreCounter()
 			exporter.IncreCounterWithEndpoint(r.URL.Path)
 			exporter.ChangeCpuTemp()
+			exporter.ChangeHistgram()
 		})
 	}
 	// Handle Metrics endpoint
